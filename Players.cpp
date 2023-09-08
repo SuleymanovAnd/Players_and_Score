@@ -85,7 +85,11 @@ int main()
     for (int i = 0; i < playersCount; i++) {
         std::cout << players[i]->GetName() << "  - " << players[i]->GetScore() << std::endl;
     }
-
+    for (int i = 0; i < playersCount; i++) {
+        delete players[i];
+        players[i] = nullptr;
+    }
+    delete players;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
